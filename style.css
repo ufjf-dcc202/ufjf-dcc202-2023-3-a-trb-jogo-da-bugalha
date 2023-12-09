@@ -3,9 +3,35 @@ body {
     justify-content: center;
 }
 
+
 .dado {
-    font-size: 30px;
+    font-size: 15px;
     text-align: center;
     border-style: solid;
     border-color: aqua;
+}
+h1 {
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(111, 0, 255);
+}
+
+
+/*tabuleiro*/
+.tabuleiro {
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 90px 90px 90px;
+    width: 330px;
+    padding-left: 50px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-width: 30px;
+}
+.tabuleiro button {
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    font-size: 30px;
+    background: #f7f7f7;
 }
