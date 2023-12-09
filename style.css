@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.dado {
+    font-size: 30px;
+    text-align: center;
+    border-style: solid;
+    border-color: aqua;
+}
