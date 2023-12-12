@@ -20,7 +20,7 @@ h1 {
     border-color: transparent;
 }
 
-/valores calculados/
+/*valores calculados*/
 table {
     display:flex;
     justify-content: center;
@@ -40,7 +40,7 @@ td {
     margin: 10px;
 }
 
-/tabuleiro/
+/*tabuleiro*/
 .tabuleiro {
     display: grid;
     grid-template-columns: 90px 90px 90px;
