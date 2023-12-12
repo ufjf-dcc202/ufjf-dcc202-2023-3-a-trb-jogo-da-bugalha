@@ -10,21 +10,11 @@
 <body>
     <main>
         <div><h1>JOGO DA BUGALHA</h1></div>
-        <div class="dado"><h2 id="dBot">N</h2></div>
+        <div class="dado"><h2 id="dBot">Dado do Bot</h2></div>
 
-        <div class="valor">
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="cb1">lista</td>
-                        <td id="cb2">lista</td>
-                        <td id="cb3">lista</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
+        
         <div class="tabuleiro">
+            <button id="b0"></button>
             <button id="b1"></button>
             <button id="b2"></button>
             <button id="b3"></button>
@@ -33,22 +23,36 @@
             <button id="b6"></button>
             <button id="b7"></button>
             <button id="b8"></button>
-            <button id="b9"></button>
         </div>
-
-        <div class="valor">
+        
+        <div>
             <table>
                 <tbody>
                     <tr>
-                        <td id="cj1">lista</td>
-                        <td id="cj2">lista</td>
-                        <td id="cj3">lista</td>
+                        <td id="sb0"></td>
+                        <td id="sb1"></td>
+                        <td id="sb2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div><hr class="barra-horizontal"></div>
+
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="sj0"></td>
+                        <td id="sj1"></td>
+                        <td id="sj2"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="tabuleiro">
+            <button id="j0"></button>
             <button id="j1"></button>
             <button id="j2"></button>
             <button id="j3"></button>
@@ -57,13 +61,18 @@
             <button id="j6"></button>
             <button id="j7"></button>
             <button id="j8"></button>
-            <button id="j9"></button>
         </div>
 
-        <div class="dado"><h2 id="dJogador">N</h2></div>
+        <div class="jogador">
+            <button id="coluna0" disabled>Coluna 1</button>
+            <button id="coluna1" disabled>Coluna 2</button>
+            <button id="coluna2" disabled>Coluna 3</button>
+        </div>
 
-        <div id="reiniciar">
-            <button>Reset Game</button>
+        <div class="dado"><h2 id="dJogador">Dado do Jogador</h2></div>
+
+        <div>
+            <div id="iniciar"><button id="botao">New Game</button></div>
         </div>
     </main>
     
