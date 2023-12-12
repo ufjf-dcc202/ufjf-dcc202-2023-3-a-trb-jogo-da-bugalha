@@ -1,36 +1,46 @@
 body {
     display: flex;
     justify-content: center;
+    color: aliceblue;
+    background-color: #141313;
 }
-
 
 .dado {
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     border-style: solid;
-    border-color: aqua;
+    border-color: aliceblue;
+    margin: 15px;
 }
 h1 {
+    font-size: 25px;
+    font-weight: bold;
     text-align: center;
     border-style: solid;
-    border-color: rgb(111, 0, 255);
+    border-color: transparent;
 }
 
-/*valores calculados*/
+/valores calculados/
 table {
     display:flex;
     justify-content: center;
     border-collapse: collapse;
     border-style: solid;
-    border-color: white;
+    border-color: transparent;
 }
 td {
     font-size: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.barra-horizontal {
+    border: 2px; 
+    border-style: solid; 
+    border-color: aliceblue;
+    margin: 10px;
 }
 
-/*tabuleiro*/
+/tabuleiro/
 .tabuleiro {
     display: grid;
     grid-template-columns: 90px 90px 90px;
@@ -38,22 +48,42 @@ td {
     width: 330px;
     padding-left: 50px;
     border-style: solid;
-    border-color: black;
-    border-bottom-width: 30px;
+    border-color: transparent;
+    border-bottom-width: 10px;
 }
 .tabuleiro button {
     width: 90px;
     height: 90px;
     margin: 5px;
     font-size: 30px;
-    background: #f7f7f7;
+    background: rgb(43, 43, 43);
+    color: aliceblue;
+}
+.jogador {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.jogador button {
+    margin-right: 20px;
+    background-color: rgb(86, 91, 229);
+    border-radius: 10px;
+    font-weight: bold;
+}
+#coluna2 {
+    margin-right: 0;
 }
 
 /* botao reset */
-#reiniciar {
+#botao {
     display: flex;
     justify-content: center;
+    border-radius: 30px;
+    font-size: 20px;
     margin: 20px;
     width: 345px;
     height: 30px;
+    font-weight: bold;
+    background-color: rgb(188, 42, 85);
 }
