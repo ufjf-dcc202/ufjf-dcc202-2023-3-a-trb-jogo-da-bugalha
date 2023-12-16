@@ -45,7 +45,7 @@ function turnoBot() {
 //Turno do Jogador
 //Função que reune todas as funções que compõem o turno do jogador
 let valorDadoJogador;
-function turnoJogador() { 
+function turnoJogador() {
     coluna0.disabled = false;
     coluna1.disabled = false;
     coluna2.disabled = false;
@@ -82,10 +82,9 @@ function turnoJogadorContinua2() {
     verificaFimDoJogo(1, pontos[0], pontos[1]);
 }
 
-
 //Verifica se o tabuleiro está completo. Se estiver, acaba o jogo e mostra o ganhador, se não estiver:
 //Passa o turno para o próximo jogador.
-function verificaFimDoJogo() {
+function verificaFimDoJogo(proximoTurno, pontosBot, pontosJogador) {
     let contBot = 0;
     let contJogador = 0;
     for (let i = 0; i < 3; i++) {
@@ -104,6 +103,7 @@ function verificaFimDoJogo() {
         } else if (pontosJogador > pontosBot) {
             vencedor.innerHTML = "Parabéns, você venceu!";
         }
+
     }
     else {
         estadoDoJogo(proximoTurno);

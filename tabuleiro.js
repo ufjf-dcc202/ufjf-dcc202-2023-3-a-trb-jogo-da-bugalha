@@ -1,3 +1,7 @@
+let coluna0 = document.getElementById("coluna0");
+let coluna1 = document.getElementById("coluna1");
+let coluna2 = document.getElementById("coluna2");
+
 //Define variaveis que representam cada posição do tabuleiro.
 let b0 = document.querySelector("#b0");
 let b1 = document.querySelector("#b1");
@@ -58,7 +62,6 @@ export function verificaColunaBot(col, dado) {
     }
 
 }
-
 //soma dos valores dentro das colunas para visualização dentro do jogo (bot).
 export function somaColunasBot() {
     //calcula e imprime a soma das colunas
@@ -141,9 +144,7 @@ export function verificaColunaJogador(col, dado) {
             i = 3;
         }
     }
-
 }
-
 //soma dos valores dentro das colunas para visualização dentro do jogo (jogador).
 export function somaColunasJogador() {
     for (let j = 0; j < 3; j++) {
