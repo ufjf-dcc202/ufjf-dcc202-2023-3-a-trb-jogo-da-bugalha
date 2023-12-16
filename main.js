@@ -1,4 +1,4 @@
-import { sobreporDado, jogaDado, defineColuna, verificaColunaBot, somaColunasBot, verificaColunaJogador, somaColunasJogador, escreveTabuleiro, zeraMatriz, tabuleiroBot, tabuleiroJogador } from "./tabuleiro.js";
+import { sobreporDado, jogaDado, defineColuna, verificaColunaBot, somaColunasBot, verificaColunaJogador, desabilitaColuna, somaColunasJogador, escreveTabuleiro, zeraMatriz, tabuleiroBot, tabuleiroJogador } from "./tabuleiro.js";
 
 //Define botões para a coluna do Jogador.
 let coluna0 = document.getElementById("coluna0");
@@ -49,6 +49,7 @@ function turnoJogador() {
     coluna0.disabled = false;
     coluna1.disabled = false;
     coluna2.disabled = false;
+    desabilitaColuna();
     let vlDado = jogaDado();
     valorDadoJogador = vlDado;
     dadoJogador.innerHTML = vlDado;
@@ -103,6 +104,9 @@ function verificaFimDoJogo(proximoTurno, pontosBot, pontosJogador) {
         } else if (pontosJogador > pontosBot) {
             vencedor.innerHTML = "Parabéns, você venceu!";
         }
+        coluna0.disabled = true;
+        coluna1.disabled = true;
+        coluna2.disabled = true;
 
     }
     else {

@@ -1,7 +1,6 @@
 let coluna0 = document.getElementById("coluna0");
 let coluna1 = document.getElementById("coluna1");
 let coluna2 = document.getElementById("coluna2");
-
 //Define variaveis que representam cada posição do tabuleiro.
 let b0 = document.querySelector("#b0");
 let b1 = document.querySelector("#b1");
@@ -145,6 +144,18 @@ export function verificaColunaJogador(col, dado) {
         }
     }
 }
+
+export function desabilitaColuna(){
+    if (tabuleiroJogador[0][0] != 0 && (tabuleiroJogador[1][0]) != 0 && (tabuleiroJogador[2][0]) != 0){
+        coluna0.disabled = true;
+    }
+    if (tabuleiroJogador[0][1] != 0 && (tabuleiroJogador[1][1]) != 0 && (tabuleiroJogador[2][1]) != 0){
+        coluna1.disabled = true;
+    }
+    if (tabuleiroJogador[0][2] != 0 && (tabuleiroJogador[1][2]) != 0 && (tabuleiroJogador[2][2]) != 0){
+        coluna2.disabled = true;
+    }
+}
 //soma dos valores dentro das colunas para visualização dentro do jogo (jogador).
 export function somaColunasJogador() {
     for (let j = 0; j < 3; j++) {
@@ -231,4 +242,5 @@ export function zeraMatriz() {
         }
     }
     escreveTabuleiro();
+    vencedor.innerHTML = "";
 }
