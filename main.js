@@ -1,3 +1,5 @@
+import { sobreporDado, jogaDado, defineColuna, verificaColunaBot, somaColunasBot, verificaColunaJogador, somaColunasJogador, escreveTabuleiro, zeraMatriz, tabuleiroBot, tabuleiroJogador } from "./tabuleiro.js";
+
 //Define botões para a coluna do Jogador.
 let coluna0 = document.getElementById("coluna0");
 let coluna1 = document.getElementById("coluna1");
@@ -25,9 +27,15 @@ function estadoDoJogo(idJogador) {
 }
 
 //Turno do Bot
-function turnoBot() {}
+function turnoBot() {
+
+}
 
 let valorDadoJogador;
 function turnoJogador() { 
+
+}
+
+function verificaFimDoJogo() {
 
 }
