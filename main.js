@@ -43,7 +43,15 @@ function turnoBot() {
 
 let valorDadoJogador;
 function turnoJogador() { 
-
+    coluna0.disabled = false;
+    coluna1.disabled = false;
+    coluna2.disabled = false;
+    let vlDado = jogaDado();
+    valorDadoJogador = vlDado;
+    dadoJogador.innerHTML = vlDado;
+    coluna0.addEventListener("click", turnoJogadorContinua0);
+    coluna1.addEventListener("click", turnoJogadorContinua1);
+    coluna2.addEventListener("click", turnoJogadorContinua2);
 }
 
 function verificaFimDoJogo() {
