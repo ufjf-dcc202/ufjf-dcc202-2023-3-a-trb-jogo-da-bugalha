@@ -113,6 +113,24 @@ export function somaColunasBot() {
     return [somaBot, somaJogador];
 }
 
+//Função para sobrepor valores, excluir coluna inimiga.
+export function sobreporDado(coluna, valor, jogador) {
+    if (jogador == 2) {
+        for (let i = 0; i < 3; i++) {
+            if (tabuleiroBot[i][coluna] == valor) {
+                tabuleiroBot[i][coluna] = 0;
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < 3; i++) {
+            if (tabuleiroJogador[i][coluna] == valor) {
+                tabuleiroJogador[i][coluna] = 0;
+            }
+        }
+    }
+}
+
 //Funções do Jogador
 //define a posição dentro da coluna escolhida.
 export function verificaColunaJogador(col, dado) {
