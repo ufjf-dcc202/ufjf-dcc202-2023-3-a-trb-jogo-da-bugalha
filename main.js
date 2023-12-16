@@ -28,7 +28,17 @@ function estadoDoJogo(idJogador) {
 
 //Turno do Bot
 function turnoBot() {
-
+    let vlDado = jogaDado();
+    dadoBot.innerHTML = vlDado;
+    let vlColuna = defineColuna();
+    //define variaveis da posicao
+    verificaColunaBot(vlColuna, vlDado);
+    somaColunasBot();
+    somaColunasJogador();
+    sobreporDado(vlColuna, vlDado, 1);
+    escreveTabuleiro();
+    let pontos = somaColunasBot();
+    verificaFimDoJogo(2, pontos[0], pontos[1]);
 }
 
 let valorDadoJogador;
@@ -37,5 +47,26 @@ function turnoJogador() {
 }
 
 function verificaFimDoJogo() {
-
+    let contBot = 0;
+    let contJogador = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (tabuleiroBot[i][j] != 0) {
+                contBot++;
+            }
+            if (tabuleiroJogador[i][j] != 0) {
+                contJogador++;
+            }
+        }
+    }
+    if (contBot == 9 || contJogador == 9) {
+        if (pontosBot > pontosJogador) {
+            vencedor.innerHTML = "Você perdeu...";
+        } else if (pontosJogador > pontosBot) {
+            vencedor.innerHTML = "Parabéns, você venceu!";
+        }
+    }
+    else {
+        estadoDoJogo(proximoTurno);
+    }
 }
