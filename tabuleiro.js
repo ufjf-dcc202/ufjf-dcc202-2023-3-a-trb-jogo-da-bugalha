@@ -112,3 +112,16 @@ export function somaColunasBot() {
     }
     return [somaBot, somaJogador];
 }
+
+//Funções do Jogador
+//define a posição dentro da coluna escolhida.
+export function verificaColunaJogador(col, dado) {
+
+    for (let i = 0; i < 3; i++) {
+        if (tabuleiroJogador[i][col] == 0) {
+            tabuleiroJogador[i][col] = dado;
+            i = 3;
+        }
+    }
+
+}
