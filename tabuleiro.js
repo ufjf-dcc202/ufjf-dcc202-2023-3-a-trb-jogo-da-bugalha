@@ -178,3 +178,38 @@ export function somaColunasJogador() {
     }
     return [somaBot, somaJogador];
 }
+
+//Escreve Tabuleiro (vizualização).
+export function escreveTabuleiro() {
+    if (tabuleiroBot[0][0] != 0) { b0.innerHTML = tabuleiroBot[0][0]; } else { b0.innerHTML = ""; }
+    if (tabuleiroBot[0][1] != 0) { b1.innerHTML = tabuleiroBot[0][1]; } else { b1.innerHTML = ""; }
+    if (tabuleiroBot[0][2] != 0) { b2.innerHTML = tabuleiroBot[0][2]; } else { b2.innerHTML = ""; }
+    if (tabuleiroBot[1][0] != 0) { b3.innerHTML = tabuleiroBot[1][0]; } else { b3.innerHTML = ""; }
+    if (tabuleiroBot[1][1] != 0) { b4.innerHTML = tabuleiroBot[1][1]; } else { b4.innerHTML = ""; }
+    if (tabuleiroBot[1][2] != 0) { b5.innerHTML = tabuleiroBot[1][2]; } else { b5.innerHTML = ""; }
+    if (tabuleiroBot[2][0] != 0) { b6.innerHTML = tabuleiroBot[2][0]; } else { b6.innerHTML = ""; }
+    if (tabuleiroBot[2][1] != 0) { b7.innerHTML = tabuleiroBot[2][1]; } else { b7.innerHTML = ""; }
+    if (tabuleiroBot[2][2] != 0) { b8.innerHTML = tabuleiroBot[2][2]; } else { b8.innerHTML = ""; }
+
+    if (tabuleiroJogador[0][0] != 0) { j0.innerHTML = tabuleiroJogador[0][0]; } else { j0.innerHTML = "" }
+    if (tabuleiroJogador[0][1] != 0) { j1.innerHTML = tabuleiroJogador[0][1]; } else { j1.innerHTML = "" }
+    if (tabuleiroJogador[0][2] != 0) { j2.innerHTML = tabuleiroJogador[0][2]; } else { j2.innerHTML = "" }
+    if (tabuleiroJogador[1][0] != 0) { j3.innerHTML = tabuleiroJogador[1][0]; } else { j3.innerHTML = "" }
+    if (tabuleiroJogador[1][1] != 0) { j4.innerHTML = tabuleiroJogador[1][1]; } else { j4.innerHTML = "" }
+    if (tabuleiroJogador[1][2] != 0) { j5.innerHTML = tabuleiroJogador[1][2]; } else { j5.innerHTML = "" }
+    if (tabuleiroJogador[2][0] != 0) { j6.innerHTML = tabuleiroJogador[2][0]; } else { j6.innerHTML = "" }
+    if (tabuleiroJogador[2][1] != 0) { j7.innerHTML = tabuleiroJogador[2][1]; } else { j7.innerHTML = "" }
+    if (tabuleiroJogador[2][2] != 0) { j8.innerHTML = tabuleiroJogador[2][2]; } else { j8.innerHTML = "" }
+}
+//Limpa Tabuleiro e valores das matrizes.
+export function zeraMatriz() {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            tabuleiroBot[i][j] = 0;
+            tabuleiroJogador[i][j] = 0;
+            pontuacaoBot[i][i] = 0;
+            pontuacaoJogador[i][i] = 0;
+        }
+    }
+    escreveTabuleiro();
+}
