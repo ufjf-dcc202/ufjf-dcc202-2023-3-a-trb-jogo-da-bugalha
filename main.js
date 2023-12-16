@@ -12,6 +12,7 @@ let botao = document.querySelector("#botao")
 //Define caixa de texto que irá mostrar o vencedor
 let vencedor = document.querySelector("#vencedor");
 
+//Função Principal do Jogo.
 botao.addEventListener('click', newGame);
 function newGame() {
     zeraMatriz();
@@ -41,6 +42,8 @@ function turnoBot() {
     verificaFimDoJogo(2, pontos[0], pontos[1]);
 }
 
+//Turno do Jogador
+//Função que reune todas as funções que compõem o turno do jogador
 let valorDadoJogador;
 function turnoJogador() { 
     coluna0.disabled = false;
@@ -53,7 +56,35 @@ function turnoJogador() {
     coluna1.addEventListener("click", turnoJogadorContinua1);
     coluna2.addEventListener("click", turnoJogadorContinua2);
 }
+//Três funções chamadas ao apertar um dos botões das colunas para que o jogo possa continuar.
+function turnoJogadorContinua0() {
+    verificaColunaJogador(0, valorDadoJogador);
+    somaColunasJogador();
+    sobreporDado(0, valorDadoJogador, 2);
+    escreveTabuleiro();
+    let pontos = somaColunasJogador();
+    verificaFimDoJogo(1, pontos[0], pontos[1]);
+}
+function turnoJogadorContinua1() {
+    verificaColunaJogador(1, valorDadoJogador);
+    somaColunasJogador();
+    sobreporDado(1, valorDadoJogador, 2);
+    escreveTabuleiro();
+    let pontos = somaColunasJogador();
+    verificaFimDoJogo(1, pontos[0], pontos[1]);
+}
+function turnoJogadorContinua2() {
+    verificaColunaJogador(2, valorDadoJogador);
+    somaColunasJogador();
+    sobreporDado(2, valorDadoJogador, 2);
+    escreveTabuleiro();
+    let pontos = somaColunasJogador();
+    verificaFimDoJogo(1, pontos[0], pontos[1]);
+}
 
+
+//Verifica se o tabuleiro está completo. Se estiver, acaba o jogo e mostra o ganhador, se não estiver:
+//Passa o turno para o próximo jogador.
 function verificaFimDoJogo() {
     let contBot = 0;
     let contJogador = 0;
