@@ -125,3 +125,56 @@ export function verificaColunaJogador(col, dado) {
     }
 
 }
+
+//soma dos valores dentro das colunas para visualização dentro do jogo (jogador).
+export function somaColunasJogador() {
+    for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < 3; i++) {
+            let valorPosicao = tabuleiroJogador[i][j];
+            let fator = 1;
+            if (i == 0) {
+                if (valorPosicao == tabuleiroJogador[i + 1][j] || valorPosicao == tabuleiroJogador[i + 2][j]) {
+                    fator = 2;
+                }
+                if ((valorPosicao == tabuleiroJogador[i + 1][j]) && (valorPosicao == tabuleiroJogador[i + 2][j])) {
+                    fator = 3;
+                }
+                pontuacaoJogador[i][j] = valorPosicao * fator;
+            }
+            else if (i == 1) {
+                if (valorPosicao == tabuleiroJogador[i - 1][j] || valorPosicao == tabuleiroJogador[i + 1][j]) {
+                    fator = 2;
+                }
+                if ((valorPosicao == tabuleiroJogador[i - 1][j]) && (valorPosicao == tabuleiroJogador[i + 1][j])) {
+                    fator = 3;
+                }
+                pontuacaoJogador[i][j] = valorPosicao * fator;
+            }
+            else if (i == 2) {
+                if (valorPosicao == tabuleiroJogador[i - 1][j] || valorPosicao == tabuleiroJogador[i - 2][j]) {
+                    fator = 2;
+                }
+                if ((valorPosicao == tabuleiroJogador[i - 1][j]) && (valorPosicao == tabuleiroJogador[i - 2][j])) {
+                    fator = 3;
+                }
+                pontuacaoJogador[i][j] = valorPosicao * fator;
+            }
+            else {
+                pontuacaoJogador[i][j] = valorPosicao * fator;
+            }
+        }
+        sj0.innerHTML = pontuacaoJogador[0][0] + pontuacaoJogador[1][0] + pontuacaoJogador[2][0];
+        sj1.innerHTML = pontuacaoJogador[0][1] + pontuacaoJogador[1][1] + pontuacaoJogador[2][1];
+        sj2.innerHTML = pontuacaoJogador[0][2] + pontuacaoJogador[1][2] + pontuacaoJogador[2][2];
+    }
+    //soma final de todos os para ser usada dentro de "verificaFimDoJogo()"
+    let somaBot = 0;
+    let somaJogador = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            somaBot += pontuacaoBot[i][j];
+            somaJogador += pontuacaoJogador[i][j];
+        }
+    }
+    return [somaBot, somaJogador];
+}
