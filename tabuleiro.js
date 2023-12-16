@@ -34,3 +34,27 @@ export let tabuleiroJogador = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 //definindo matrizes que representam os valores do tabuleiro espelhados e calculados segundo as regras.
 let pontuacaoBot = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let pontuacaoJogador = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+
+//Funções do Bot
+//função para randomizar o valor dado a ser utilizado pelos jogadores.
+export function jogaDado() {
+    let n = Math.floor(Math.random() * 6) + 1;
+    return n;
+}
+//escolhe aleatoriamente a coluna na qual o bot vai jogar o dado.
+export function defineColuna() {
+    const conjuntoC = [0, 1, 2];
+    let coluna = conjuntoC[Math.floor(Math.random() * conjuntoC.length)];
+    return [coluna];
+}
+//define a posição dentro da coluna escolhida.
+export function verificaColunaBot(col, dado) {
+
+    for (let i = 2; i > -1; i--) {
+        if (tabuleiroBot[i][col] == 0) {
+            tabuleiroBot[i][col] = dado;
+            i = -1;
+        }
+    }
+
+}
