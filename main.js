@@ -9,3 +9,25 @@ let dadoJogador = document.querySelector("#dJogador");
 let botao = document.querySelector("#botao")
 //Define caixa de texto que irá mostrar o vencedor
 let vencedor = document.querySelector("#vencedor");
+
+botao.addEventListener('click', newGame);
+function newGame() {
+    zeraMatriz();
+    estadoDoJogo(1);
+}
+function estadoDoJogo(idJogador) {
+    if (idJogador == 1) {
+        turnoBot();
+    }
+    else {
+        turnoJogador();
+    }
+}
+
+//Turno do Bot
+function turnoBot() {}
+
+let valorDadoJogador;
+function turnoJogador() { 
+
+}
